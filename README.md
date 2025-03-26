@@ -6,15 +6,16 @@ This repository showcases a real-world, cloud-native Data Analytics Platform (DA
 
 ## 🚀 Project Types
 
-The portfolio includes five major types of data analytics and operations:
+The portfolio includes six major types of data analytics and operations:
 
 | Type                           | Description                                                                                          | Link |
 |--------------------------------|------------------------------------------------------------------------------------------------------|------|
-| 🔍 Exploratory & Descriptive   | Understand patterns in rental complaints, analyze totals per geo-local area                         | [View](./descriptive-analysis/README.md) |
-| 🩺 Diagnostic                  | Identify data outliers and root causes for anomalies using Athena                                    | [View](./diagnostic-analysis/README.md) |
-| 🧹 Data Wrangling              | Clean and transform raw datasets using DataBrew & Glue ETL                                          | [View](./data-wrangling/README.md) |
-| ✅ Data Quality Control        | Enforce completeness, uniqueness using visual ETL and quality rules                                 | [View](./data-quality-control/README.md) |
-| 📊 Monitoring & Security       | Track AWS resource usage, encrypt data, and ensure cost-efficiency using KMS, Versioning, and CloudWatch | [View](./data-security/README.md) |
+| 🧱 Design DAP Architecture      | Draw.io design of a scalable, secure Data Analytics Platform using AWS services                    | [View](./Design-Data-Analytics-Platform/README.md) |
+| 🔍 Exploratory & Descriptive   | Understand patterns in rental complaints, analyze totals per geo-local area                         | [View](./Descriptive-Analysis/README.md) |
+| 🩺 Diagnostic Analysis          | Identify data outliers and root causes for anomalies using Athena                                   | [View](./Diagnostic-Analysis/README.md) |
+| 🧹 Data Wrangling               | Clean and transform raw datasets using DataBrew & Glue ETL                                          | [View](./Data-Wrangling/README.md) |
+| ✅ Data Quality Control         | Enforce completeness, uniqueness using visual ETL and quality rules                                 | [View](./Data-Quality-Control/README.md) |
+| 🔐 Data Security & Monitoring   | Encrypt data, version S3 buckets, replicate and track metrics via CloudWatch                        | [View](./Data-Security/README.md) |
 
 ---
 
@@ -31,14 +32,16 @@ The portfolio includes five major types of data analytics and operations:
 ## 📂 Repository Structure
 
 ```bash
-├── descriptive-analysis/
+├── Data-Quality-Control/
 │   └── README.md
-├── diagnostic-analysis/
+├── Data-Security/
 │   └── README.md
-├── data-wrangling/
+├── Data-Wrangling/
 │   └── README.md
-├── data-quality-control/
+├── Descriptive-Analysis/
 │   └── README.md
-├── data-security/
+├── Design-Data-Analytics-Platform/
+│   └── README.md
+├── Diagnostic-Analysis/
 │   └── README.md
 └── README.md  ← Main landing page
