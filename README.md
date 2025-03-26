@@ -31,7 +31,7 @@ The portfolio includes six major types of data analytics and operations:
 
 ## 📂 Repository Structure
 
-```bash
+bash
 ├── Data-Quality-Control/
 │   ├── Data-Quality-Check.md
 │   └── Screen-Shots/
