@@ -67,7 +67,7 @@ Using **AWS Glue DataBrew**, a data profile was generated for initial insights:
 - Correlation and outlier detection via boxplots
 
 ⬇️ Data Profiling Overview  
-![Data Profiling](./Screen-Shots/Data Profiling Overview.png)
+![Data Profiling](./Screen-Shots/Data_Profiling_Overview.png)
 
 **Key Insight:**
 
@@ -88,7 +88,7 @@ A **DataBrew recipe** was created with steps for:
 - Trimming extra spaces and unifying text cases
 
 ⬇️ Recipe Steps  
-![Data Cleaning Recipe](./Screen-Shots/Recipe Steps.png)
+![Data Cleaning Recipe](./Screen-Shots/Recipe_Steps.png)
 
 **Why CamelCase?**  
 Industry best practice. Improves compatibility with Athena, ETL pipelines, and dashboards.
@@ -100,7 +100,7 @@ Industry best practice. Improves compatibility with Athena, ETL pipelines, and d
 `GeoLocalArea` was selected for cleaning due to its analytical importance in segmentation and group-by operations.
 
 ⬇️ Null Value Filter Step  
-![Null Filter](./Screen-Shots/Null Value Filter Step .png)
+![Null Filter](./Screen-Shots/Null_Value_Filter Step .png)
 
 ---
 
@@ -109,7 +109,7 @@ Industry best practice. Improves compatibility with Athena, ETL pipelines, and d
 A **DataBrew Job** was created and run to apply the cleaning recipe. Runtime statistics were captured to evaluate cost and performance.
 
 ⬇️ Job Run History  
-![Job Run History](./Screen-Shots/Job Run History  .png)
+![Job Run History](./Screen-Shots/Job_Run_History.png)
 
 ---
 
@@ -121,10 +121,10 @@ A **DataBrew Job** was created and run to apply the cleaning recipe. Runtime sta
 | **System Output** | Parquet (Snappy) | `cov-trf-suj/System`  | For analysis, compression-enabled |
 
 ⬇️ User Output (CSV)  
-![CSV User Output](./Screen-Shots/User Output (CSV).png)
+![CSV User Output](./Screen-Shots/User_Output_(CSV).png)
 
 ⬇️ System Output (Parquet)  
-![Parquet System Output](./Screen-Shots/System Output (Parquet).png)
+![Parquet System Output](./Screen-Shots/System_Output_(Parquet).png)
 
 **Why Parquet + Snappy?**  
 Efficient storage and partitioning for downstream analysis in Glue and Athena.
