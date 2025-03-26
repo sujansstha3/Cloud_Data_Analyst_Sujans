@@ -28,3 +28,27 @@ The portfolio includes six major types of data analytics and operations:
 - **Amazon CloudWatch & CloudTrail** – Monitoring and activity logging
 
 ---
+
+<!--
+## 📂 Repository Structure
+
+📦 City-of-Vancouver-DAP
+├── 📁 Data-Quality-Control
+│   ├── 📄 Data-Quality-Check.md
+│   └── 📁 Screen-Shots
+├── 📁 Data-Security
+│   ├── 📄 Data_Security_KMS.md
+│   └── 📁 Screen-Shots
+├── 📁 Data-Wrangling
+│   ├── 📄 Data_Wrangling_Report.md
+│   └── 📁 Screen-Shots
+├── 📁 Descriptive-Analysis
+│   └── 📄 Descriptive_Insights.md
+├── 📁 Design-Data-Analytics-Platform
+│   ├── 🖼️ Design.png
+│   ├── 📄 Project 2 Design - Sujans Shrestha (2319052) Rental Issue.drawio
+│   └── 📄 dap_architecture.drawio
+├── 📁 Diagnostic-Analysis
+│   └── 📄 Diagnostic_Analysis_Athena.md
+└── 📄 README.md
+-->
