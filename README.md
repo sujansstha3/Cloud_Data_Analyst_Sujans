@@ -10,12 +10,12 @@ The portfolio includes six major types of data analytics and operations:
 
 | Type                           | Description                                                                                          | Link |
 |--------------------------------|------------------------------------------------------------------------------------------------------|------|
-| 🧱 Design DAP Architecture      | Draw.io design of a scalable, secure Data Analytics Platform using AWS services                    | [View](./Design-Data-Analytics-Platform/README.md) |
-| 🔍 Exploratory & Descriptive   | Understand patterns in rental complaints, analyze totals per geo-local area                         | [View](./Descriptive-Analysis/README.md) |
-| 🩺 Diagnostic Analysis          | Identify data outliers and root causes for anomalies using Athena                                   | [View](./Diagnostic-Analysis/README.md) |
-| 🧹 Data Wrangling               | Clean and transform raw datasets using DataBrew & Glue ETL                                          | [View](./Data-Wrangling/README.md) |
-| ✅ Data Quality Control         | Enforce completeness, uniqueness using visual ETL and quality rules                                 | [View](./Data-Quality-Control/README.md) |
-| 🔐 Data Security & Monitoring   | Encrypt data, version S3 buckets, replicate and track metrics via CloudWatch                        | [View](./Data-Security/README.md) |
+| 🧱 Design DAP Architecture      | Draw.io design of a scalable, secure Data Analytics Platform using AWS services                     | [View](./Design-Data-Analytics-Platform/Design.png) |
+| 🔍 Exploratory & Descriptive   | Understand patterns in rental complaints, analyze totals per geo-local area                         | [View](./Descriptive-Analysis/Descriptive_Insights.md) |
+| 🩺 Diagnostic Analysis          | Identify data outliers and root causes for anomalies using Athena                                   | [View](./Diagnostic-Analysis/Diagnostic_Analysis_Athena.md) |
+| 🧹 Data Wrangling               | Clean and transform raw datasets using DataBrew & Glue ETL                                          | [View](./Data-Wrangling/Data_Wrangling_Report.md) |
+| ✅ Data Quality Control         | Evaluate rule-based data validation (uniqueness, completeness) using Glue ETL                       | [View](./Data-Quality-Control/Data-Quality-Check.md) |
+| 🔐 Data Security & Monitoring   | Encrypt, version, replicate and monitor data using KMS, S3, and CloudWatch                          | [View](./Data-Security/Data_Security_KMS.md) |
 
 ---
 
@@ -33,15 +33,47 @@ The portfolio includes six major types of data analytics and operations:
 
 ```bash
 ├── Data-Quality-Control/
-│   └── README.md
+│   ├── Data-Quality-Check.md
+│   └── Screen-Shots/
+│       ├── failed_folder.png
+│       ├── monitoring_dashboard.png
+│       ├── passed_folder.png
+│       ├── quality_check_pipeline.png
+│       └── quality_check_result.png
+
 ├── Data-Security/
-│   └── README.md
+│   ├── Data_Security_KMS.md
+│   └── Screen-Shots/
+│       ├── curated_versioning.png
+│       ├── kms_key_creation.png
+│       ├── raw_versioning.png
+│       └── transformed_versioning.png
+
 ├── Data-Wrangling/
-│   └── README.md
+│   ├── Data_Wrangling_Report.md
+│   └── Screen-Shots/
+│       ├── Amazon_S3_Buckets.png
+│       ├── Data_Profiling_Overview.png
+│       ├── Job_Run_History.png
+│       ├── Null_Value_Filter_Step.png
+│       ├── Raw_Data_Ingestion.png
+│       ├── Recipe_Steps.png
+│       ├── System_Output_(Parquet).png
+│       └── User_Output_(CSV).png
+
 ├── Descriptive-Analysis/
-│   └── README.md
+│   └── Descriptive_Insights.md
+
 ├── Design-Data-Analytics-Platform/
-│   └── README.md
+│   ├── Design.png
+│   ├── Project 2 Design - Sujans Shrestha (2319052) Rental Issue.drawio
+│   └── dap_architecture.drawio
+
 ├── Diagnostic-Analysis/
-│   └── README.md
+│   ├── Diagnostic_Analysis_Athena.md
+│   ├── Query1.png
+│   ├── Query2.png
+│   ├── Result1.png
+│   └── Result2.png
+
 └── README.md  ← Main landing page
