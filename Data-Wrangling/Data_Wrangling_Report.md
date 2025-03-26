@@ -48,7 +48,7 @@ Data was ingested manually into an **Amazon S3 bucket** due to the absence of a 
 | `cov-cur-suj`   | Stores curated data containing final business insights and summaries |
 
 ⬇️ Amazon S3 Buckets  
-![S3 Buckets Overview](./Amazon S3 Buckets.png)
+![S3 Buckets Overview](./Screen-Shot/Amazon S3 Buckets.png)
 
 ⬇️ Raw Data Ingestion  
 ![Data Upload to S3](./Raw Data Ingestion.png)
@@ -67,7 +67,7 @@ Using **AWS Glue DataBrew**, a data profile was generated for initial insights:
 - Correlation and outlier detection via boxplots
 
 ⬇️ **Upload Screenshot**: Data Profiling Overview  
-![Data Profiling](./Data Profiling Overview.png)
+![Data Profiling](./Screen-Shot/Data Profiling Overview.png)
 
 **Key Insight:**
 
@@ -88,7 +88,7 @@ A **DataBrew recipe** was created with steps for:
 - Trimming extra spaces and unifying text cases
 
 ⬇️ **Upload Screenshot**: Recipe Steps  
-![Data Cleaning Recipe](./Recipe Steps.png)
+![Data Cleaning Recipe](./Screen-Shot/Recipe Steps.png)
 
 **Why CamelCase?**  
 Industry best practice. Improves compatibility with Athena, ETL pipelines, and dashboards.
@@ -100,7 +100,7 @@ Industry best practice. Improves compatibility with Athena, ETL pipelines, and d
 `GeoLocalArea` was selected for cleaning due to its analytical importance in segmentation and group-by operations.
 
 ⬇️ **Upload Screenshot**: Null Value Filter Step  
-![Null Filter](./Null Value Filter Step .png)
+![Null Filter](./Screen-Shot/Null Value Filter Step .png)
 
 ---
 
@@ -109,7 +109,7 @@ Industry best practice. Improves compatibility with Athena, ETL pipelines, and d
 A **DataBrew Job** was created and run to apply the cleaning recipe. Runtime statistics were captured to evaluate cost and performance.
 
 ⬇️ **Upload Screenshot**: Job Run History  
-![Job Run History](./Job Run History  .png)
+![Job Run History](./Screen-Shot/Job Run History  .png)
 
 ---
 
@@ -121,10 +121,10 @@ A **DataBrew Job** was created and run to apply the cleaning recipe. Runtime sta
 | **System Output** | Parquet (Snappy) | `cov-trf-suj/System`  | For analysis, compression-enabled |
 
 ⬇️ **Upload Screenshot**: User Output (CSV)  
-![CSV User Output](./User Output (CSV).png)
+![CSV User Output](./Screen-Shot/User Output (CSV).png)
 
 ⬇️ **Upload Screenshot**: System Output (Parquet)  
-![Parquet System Output](./System Output (Parquet).png)
+![Parquet System Output](./Screen-Shot/System Output (Parquet).png)
 
 **Why Parquet + Snappy?**  
 Efficient storage and partitioning for downstream analysis in Glue and Athena.
