@@ -51,7 +51,7 @@ Data was ingested manually into an **Amazon S3 bucket** due to the absence of a 
 ![S3 Buckets Overview](./Screen-Shots/Amazon_S3_Buckets.png)
 
 ⬇️ Raw Data Ingestion  
-![Data Upload to S3](./Screen-Shots/Raw Data Ingestion.png)
+![Data Upload to S3](./Screen-Shots/Raw_Data_Ingestion.png)
 
 **Reason:**  
 Since the operational system is not hosted on AWS, a manual upload ensures the data is accessible in S3 for transformation while simulating an eventual automated pipeline.
