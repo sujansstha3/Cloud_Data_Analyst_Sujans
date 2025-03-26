@@ -63,7 +63,7 @@ Once the key (`cov-ren-iss-key-suj`) was created, encryption was applied to all 
 1. **Raw Bucket**
 
 ⬇️ Raw Bucket Encryption  
-![Raw Encryption](./Screen-Shots/raw_versioning.png)
+![Raw Encryption](./Screen-Shots/raw_encryption.png)
 
 2. **Transformed Bucket**
 
