@@ -47,6 +47,6 @@ Data was ingested manually into an **Amazon S3 bucket** due to the absence of a 
 | `cov-trf-suj`   | Stores transformed data post-cleaning and quality processing |
 | `cov-cur-suj`   | Stores curated data containing final business insights and summaries |
 
-> ⬇️ Amazon S3 Buckets  
+###  ⬇️ Amazon S3 Buckets  
 ![S3 Buckets Overview](./s3_bucket_overview.png)
 
