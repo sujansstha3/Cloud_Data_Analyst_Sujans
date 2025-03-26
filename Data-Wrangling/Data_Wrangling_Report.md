@@ -100,7 +100,7 @@ Industry best practice. Improves compatibility with Athena, ETL pipelines, and d
 `GeoLocalArea` was selected for cleaning due to its analytical importance in segmentation and group-by operations.
 
 ⬇️ Null Value Filter Step  
-![Null Filter](./Screen-Shots/Null_Value_Filter Step .png)
+![Null Filter](./Screen-Shots/Null_Value_Filter_Step.png)
 
 ---
 
