@@ -28,7 +28,7 @@ To validate this, we used **Z-Score statistical techniques in Athena** to identi
 
 ## 📊 Dataset
 
-- **Source**: [City of Vancouver Open Data Portal](https://opendata.vancouver.ca)
+- **Source**: [City of Vancouver Open Data Portal]([https://opendata.vancouver.ca](https://opendata.vancouver.ca/explore/dataset/rental-standards-current-issues/information/))
 - **Title**: Rental Standard Current Issues
 - **License**: Open Government Licence – Vancouver
 - **Fields Used**:
