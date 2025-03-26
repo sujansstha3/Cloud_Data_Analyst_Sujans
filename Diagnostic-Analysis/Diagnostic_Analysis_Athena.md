@@ -49,11 +49,40 @@ FROM cov_ren_trf_system
 GROUP BY "GeoLocalArea"
 ORDER BY z_score DESC;
 ```
-🧠 Insight:
-West End had a Z-score of 3.74 – suggesting it's significantly above the mean.
+### 🧠 Insight
 
-Indicates either:
+- **West End** had a **Z-score of 3.74**, suggesting it is significantly above the mean.
+- This could indicate:
+  - A true density anomaly
+  - Or a possible outlier inflating the average
 
-A true density anomaly
 
-Or a possible outlier inflating the average
+##🔍 Query 2: Z-Score for Total Outstanding Issues
+
+```sql
+SELECT 
+  "GeoLocalArea",
+  AVG("TotalOutstanding") as avg_total_outstanding,
+  STDDEV_POP("TotalOutstanding") as stddev_outstanding,
+  COUNT(*) as count_area,
+  MAX("TotalOutstanding") as max_outstanding,
+  ROUND((MAX("TotalOutstanding") - AVG("TotalOutstanding")) / STDDEV_POP("TotalOutstanding"), 2) as z_score
+FROM cov_ren_trf_system
+GROUP BY "GeoLocalArea"
+ORDER BY z_score DESC;
+```
+### 🧠 Insight
+
+- **Downtown** and **Strathcona** had the highest Z-scores for Total Outstanding.
+- This could indicate:
+  - 🛠️ Data issues (e.g., duplicate complaints, incorrect values)
+  - 📈 Real-world escalation in rental issues in those areas
+
+
+### ⚠️ Diagnostic Outcomes
+| Area        | Z-Score | Possible Cause                      |
+|-------------|---------|--------------------------------------|
+| West End    | 3.74    | Density skew or data outlier         |
+| Strathcona  | High    | Systemic issue or duplicate          |
+| Downtown    | High    | Repeated reports or high severity    |
+
