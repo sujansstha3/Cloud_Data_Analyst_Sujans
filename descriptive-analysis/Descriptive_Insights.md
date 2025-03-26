@@ -15,7 +15,7 @@
 
 👨‍💻 **Sujans Shrestha**  
 Cloud Data Analyst | AWS Academy Graduate  
-📧 [LinkedIn Profile](#) (Insert your link here)
+📧 [LinkedIn Profile](#) ([Insert your link here](https://www.linkedin.com/in/sujans-shrestha/))
 
 ---
 
