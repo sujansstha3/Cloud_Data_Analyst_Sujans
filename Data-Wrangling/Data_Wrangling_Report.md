@@ -48,7 +48,7 @@ Data was ingested manually into an **Amazon S3 bucket** due to the absence of a 
 | `cov-cur-suj`   | Stores curated data containing final business insights and summaries |
 
 ⬇️ Amazon S3 Buckets  
-![S3 Buckets Overview](./Screen-Shots/Amazon S3 Buckets.png)
+![S3 Buckets Overview](./Screen-Shots/Amazon_S3_Buckets.png)
 
 ⬇️ Raw Data Ingestion  
 ![Data Upload to S3](./Screen-Shots/Raw Data Ingestion.png)
