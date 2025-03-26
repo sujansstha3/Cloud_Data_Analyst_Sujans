@@ -24,7 +24,7 @@ This section focuses on implementing robust data security mechanisms as part of 
 - All encryption and decryption operations use this centralized key
 - This prevents unauthorized access to data at rest or in transit
 
-⬇️ **Screenshot**: KMS Key Creation  
+⬇️ KMS Key Creation  
 ![KMS Key Creation](./Screen-Shots/kms_key_creation.png)
 
 ## ♻️ S3 Bucket Versioning
@@ -39,17 +39,17 @@ This section focuses on implementing robust data security mechanisms as part of 
 
 1. **Raw Bucket**
 
-⬇️ **Screenshot**: Raw Bucket Versioning  
+⬇️ Raw Bucket Versioning  
 ![Raw Versioning](./Screen-Shots/raw_versioning.png)
 
 2. **Transformed Bucket**
 
-⬇️ **Screenshot**: Transformed Bucket Versioning  
+⬇️ Transformed Bucket Versioning  
 ![Transformed Versioning](./Screen-Shots/transformed_versioning.png)
 
 3. **Curated Bucket**
 
-⬇️ **Screenshot**: Curated Bucket Versioning  
+⬇️ Curated Bucket Versioning  
 ![Curated Versioning](./Screen-Shots/curated_versioning.png)
 
 ---
@@ -62,32 +62,32 @@ Once the key (`cov-ren-iss-key-suj`) was created, encryption was applied to all 
 
 1. **Raw Bucket**
 
-⬇️ **Screenshot**: Raw Bucket Encryption  
+⬇️ Raw Bucket Encryption  
 ![Raw Encryption](./Screen-Shots/raw_encryption.png)
 
 2. **Raw Backup**
 
-⬇️ **Screenshot**: Raw Backup Encryption  
+⬇️ Raw Backup Encryption  
 ![Raw Backup Encryption](./Screen-Shots/raw_backup_encryption.png)
 
 3. **Transformed Bucket**
 
-⬇️ **Screenshot**: Transformed Bucket Encryption  
+⬇️ Transformed Bucket Encryption  
 ![Transformed Encryption](./Screen-Shots/transformed_encryption.png)
 
 4. **Transformed Backup**
 
-⬇️ **Screenshot**: Transformed Backup Encryption  
+⬇️ Transformed Backup Encryption  
 ![Transformed Backup Encryption](./Screen-Shots/transformed_backup_encryption.png)
 
 5. **Curated Bucket**
 
-⬇️ **Screenshot**: Curated Bucket Encryption  
+⬇️ Curated Bucket Encryption  
 ![Curated Encryption](./Screen-Shots/curated_encryption.png)
 
 6. **Curated Backup**
 
-⬇️ **Screenshot**: Curated Backup Encryption  
+⬇️ Curated Backup Encryption  
 ![Curated Backup Encryption](./Screen-Shots/curated_backup_encryption.png)
 
 ---
@@ -104,17 +104,17 @@ To maintain **high availability** and **durability**, **replication rules** were
 
 1. **Raw Bucket**
 
-⬇️ **Screenshot**: Raw Bucket Replication  
+⬇️ Raw Bucket Replication  
 ![Raw Replication](./Screen-Shots/raw_replication.png)
 
 2. **Transformed Bucket**
 
-⬇️ **Screenshot**: Transformed Bucket Replication  
+⬇️ Transformed Bucket Replication  
 ![Transformed Replication](./Screen-Shots/transformed_replication.png)
 
 3. **Curated Bucket**
 
-⬇️ **Screenshot**: Curated Bucket Replication  
+⬇️ Curated Bucket Replication  
 ![Curated Replication](./Screen-Shots/curated_replication.png)
 
 ---
