@@ -1,88 +1,166 @@
-# 🩺 Diagnostic Analysis: Investigating Outliers in Rental Data
+# 🩺 Diagnostic Analysis of Rental Outliers in the City of Vancouver
+
+## 📘 Project Description
+
+This project focuses on identifying potential **data anomalies and outliers** in the Rental Standard Current Issues dataset provided by the City of Vancouver. Using **Amazon Athena**, a serverless SQL query engine, we analyzed records directly from Amazon S3 to investigate **whether outliers may be skewing average-based summaries** used in earlier descriptive analysis.
+
+---
+
+## 🏷️ Project Title
+
+**Outlier Detection in Geo Local Areas Using Z-Score Analysis on Rental Data**
+
+---
 
 ## 🎯 Objective
 
-To perform a **diagnostic analysis** on the Rental Standard Current Issues dataset using **Amazon Athena**, aiming to identify **outliers** that could skew insights derived from average-based summarization.
+To conduct a diagnostic analysis on the rental dataset by identifying Geo Local Areas with **extreme Total Units or Total Outstanding rental issues** that may distort data insights. This aims to inform urban planning and policy decisions more accurately by separating real-world issues from data irregularities.
 
 ---
 
-## 📌 Business Questions
+## 🏙️ Background
 
-1. **Are there any outliers in the Total Units per Geo Local Area?**
-2. **Are there any outliers in the Total Outstanding Issues per Geo Local Area?**
-3. **Do these outliers represent data issues (duplicates, incorrect values) or real-world anomalies?**
+In earlier descriptive analysis, we reported that **Killarney, West End, and Downtown** had some of the highest average Total Units and Total Outstanding Issues. However, there was a concern that these averages might be **misleading due to the presence of outliers**.
 
----
-
-## 📂 Dataset
-
-- 📄 **Title**: Rental Standard Current Issues
-- 🌍 **Source**: [City of Vancouver Open Data Portal](https://opendata.vancouver.ca)
-- 🧾 **Fields**: Total Units, Total Outstanding, Geo Local Area, etc.
-- 📜 **License**: Open Government Licence – Vancouver
+To validate this, we used **Z-Score statistical techniques in Athena** to identify anomalies that lie far from the population mean. The goal is to determine if the trends are genuine or affected by extreme values.
 
 ---
 
-## 🧪 Diagnostic Methodology
+## 📊 Dataset
 
-### ✅ Tool Used: **Amazon Athena**
-Athena enables SQL-based queries directly on data stored in S3, without provisioning servers.
-
-### ✅ Outlier Detection Technique: **Z-Score**
-- Z-score indicates how many standard deviations a data point is from the mean.
-- Used to flag potential **anomalies** in Total Units and Outstanding values.
+- **Source**: [City of Vancouver Open Data Portal](https://opendata.vancouver.ca)
+- **Title**: Rental Standard Current Issues
+- **License**: Open Government Licence – Vancouver
+- **Fields Used**:
+  - `GeoLocalArea`
+  - `TotalUnits`
+  - `TotalOutstanding`
 
 ---
 
-## 🔍 Query 1: Z-Score for Total Units
+## ⚙️ Methodology
+
+### 1. Data Collection and Preparation
+- Dataset uploaded and transformed using **AWS Glue DataBrew**
+- Cleaned data stored in **Amazon S3 transformed bucket**
+- Cataloged via **AWS Glue Crawler**, and queried using **Amazon Athena**
+
+### 2. Outlier Detection Using Z-Score
+- Applied Z-Score calculation via SQL queries in Athena to evaluate distance from the mean for:
+  - `TotalUnits`
+  - `TotalOutstanding`
+
+### 3. Analysis of Results
+- Investigated Geo Local Areas with Z-scores > 3
+- Assessed whether anomalies stemmed from real-world density or data quality issues
+
+---
+
+## 🧪 Z-Score Query Samples
+
+### 🔍 Total Units Z-Score Query
 
 ```sql
 SELECT 
   "GeoLocalArea",
   AVG("TotalUnits") as avg_total_units,
   STDDEV_POP("TotalUnits") as stddev_total_units,
-  COUNT(*) as count_area,
   MAX("TotalUnits") as max_units,
-  MIN("TotalUnits") as min_units,
   ROUND((MAX("TotalUnits") - AVG("TotalUnits")) / STDDEV_POP("TotalUnits"), 2) as z_score
 FROM cov_ren_trf_system
 GROUP BY "GeoLocalArea"
 ORDER BY z_score DESC;
 ```
-### 🧠 Insight
+### ✅ Insight
 
-- **West End** had a **Z-score of 3.74**, suggesting it is significantly above the mean.
-- This could indicate:
-  - A true density anomaly
-  - Or a possible outlier inflating the average
+- **West End** had a **Z-score of 3.74**, indicating a potential outlier.
+- This could be:
+  - A genuine high-density housing zone
+  - Or a few records skewing the average
 
+---
 
-##🔍 Query 2: Z-Score for Total Outstanding Issues
+### 🔍 Total Outstanding Issues Z-Score Query
 
 ```sql
-SELECT 
-  "GeoLocalArea",
-  AVG("TotalOutstanding") as avg_total_outstanding,
-  STDDEV_POP("TotalOutstanding") as stddev_outstanding,
-  COUNT(*) as count_area,
-  MAX("TotalOutstanding") as max_outstanding,
-  ROUND((MAX("TotalOutstanding") - AVG("TotalOutstanding")) / STDDEV_POP("TotalOutstanding"), 2) as z_score
-FROM cov_ren_trf_system
-GROUP BY "GeoLocalArea"
+SELECT    
+  "GeoLocalArea",   
+  AVG("TotalOutstanding") as avg_total_outstanding,   
+  STDDEV_POP("TotalOutstanding") as stddev_outstanding,   
+  MAX("TotalOutstanding") as max_outstanding,   
+  ROUND((MAX("TotalOutstanding") - AVG("TotalOutstanding")) / STDDEV_POP("TotalOutstanding"), 2) as z_score 
+FROM cov_ren_trf_system 
+GROUP BY "GeoLocalArea" 
 ORDER BY z_score DESC;
 ```
-### 🧠 Insight
+### ✅ Insight
 
-- **Downtown** and **Strathcona** had the highest Z-scores for Total Outstanding.
-- This could indicate:
-  - 🛠️ Data issues (e.g., duplicate complaints, incorrect values)
-  - 📈 Real-world escalation in rental issues in those areas
+- **Downtown** and **Strathcona** showed **very high Z-scores** for Total Outstanding.
+- Possible reasons:
+  - 🛠️ Data entry issues (duplicates, incorrect values)
+  - 📈 Real-world rental problem concentration
 
+---
 
 ### ⚠️ Diagnostic Outcomes
+
 | Area        | Z-Score | Possible Cause                      |
 |-------------|---------|--------------------------------------|
 | West End    | 3.74    | Density skew or data outlier         |
 | Strathcona  | High    | Systemic issue or duplicate          |
 | Downtown    | High    | Repeated reports or high severity    |
 
+---
+
+### 🔁 Root Cause Possibilities
+
+#### 🧩 Scenario 1: Data Issues
+
+- Incorrect value imputation  
+- Duplicate records  
+- Reporting errors  
+
+#### 📍 Scenario 2: Real Urban Trends
+
+- High density or policy delays  
+- Systemic maintenance neglect in specific areas  
+
+> 📝 _Further analysis (e.g., feedback logs, survey data, or time-series trends) would help validate either direction._
+
+---
+
+### 🧰 Tools & Technologies
+
+| Tool                 | Purpose                                       |
+|----------------------|-----------------------------------------------|
+| **Amazon S3**        | Storage for raw/transformed data              |
+| **AWS Glue / DataBrew** | Data cleaning, profiling, and schema setup |
+| **Amazon Athena**    | SQL queries on S3 data                        |
+| **Z-Score (Stat)**   | Outlier detection via standard deviation      |
+
+---
+
+### 📦 Deliverables
+
+- 📄 Diagnostic Report (this file)  
+- 📸 Athena query screenshots (`/diagnostic-analysis/screenshots/`)  
+- ✅ Z-Score results tables  
+- 🧠 Actionable insights for refining descriptive analysis  
+- ✏️ Suggestions for deeper root cause investigations  
+
+---
+
+### 📅 Timeline
+
+| Phase                | Duration |
+|----------------------|----------|
+| Data Prep & Cleaning | Week 1   |
+| Z-Score Querying     | Week 2   |
+| Insight Validation   | Week 3   |
+| Report Writing       | Week 4   |
+
+---
+
+### 📌 Conclusion
+
+This diagnostic analysis confirmed the presence of outliers in the rental dataset that could have skewed earlier insights. While some deviations represent true patterns (e.g., West End's high density), others require further investigation. Identifying and addressing such issues enhances data integrity and supports more accurate decision-making in urban planning for the City of Vancouver.
