@@ -25,7 +25,7 @@ This section focuses on implementing robust data security mechanisms as part of 
 - This prevents unauthorized access to data at rest or in transit
 
 ⬇️ KMS Key Creation  
-![KMS Key Creation](./Screen-Shots/kms_key_creation.png)
+![KMS Key Creation](./Screen-Shots/kms_key_creation2.png)
 
 ## ♻️ S3 Bucket Versioning
 
