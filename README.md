@@ -31,35 +31,18 @@ The portfolio includes six major types of data analytics and operations:
 
 ## 📂 Repository Structure
 
-bash
+```bash
 ├── Data-Quality-Control/
 │   ├── Data-Quality-Check.md
 │   └── Screen-Shots/
-│       ├── failed_folder.png
-│       ├── monitoring_dashboard.png
-│       ├── passed_folder.png
-│       ├── quality_check_pipeline.png
-│       └── quality_check_result.png
 
 ├── Data-Security/
 │   ├── Data_Security_KMS.md
 │   └── Screen-Shots/
-│       ├── curated_versioning.png
-│       ├── kms_key_creation.png
-│       ├── raw_versioning.png
-│       └── transformed_versioning.png
 
 ├── Data-Wrangling/
 │   ├── Data_Wrangling_Report.md
 │   └── Screen-Shots/
-│       ├── Amazon_S3_Buckets.png
-│       ├── Data_Profiling_Overview.png
-│       ├── Job_Run_History.png
-│       ├── Null_Value_Filter_Step.png
-│       ├── Raw_Data_Ingestion.png
-│       ├── Recipe_Steps.png
-│       ├── System_Output_(Parquet).png
-│       └── User_Output_(CSV).png
 
 ├── Descriptive-Analysis/
 │   └── Descriptive_Insights.md
@@ -70,10 +53,7 @@ bash
 │   └── dap_architecture.drawio
 
 ├── Diagnostic-Analysis/
-│   ├── Diagnostic_Analysis_Athena.md
-│   ├── Query1.png
-│   ├── Query2.png
-│   ├── Result1.png
-│   └── Result2.png
+│   └── Diagnostic_Analysis_Athena.md
 
 └── README.md  ← Main landing page
+
