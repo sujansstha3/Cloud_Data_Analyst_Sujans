@@ -50,7 +50,7 @@ Data was ingested manually into an **Amazon S3 bucket** due to the absence of a 
 ⬇️ Amazon S3 Buckets  
 ![S3 Buckets Overview](./s3_bucket_overview.png)
 
-⬇️ **Upload Screenshot**: Raw Data Ingestion  
+⬇️ Raw Data Ingestion  
 ![Data Upload to S3](./s3_data_upload.png)
 
 **Reason:**  
