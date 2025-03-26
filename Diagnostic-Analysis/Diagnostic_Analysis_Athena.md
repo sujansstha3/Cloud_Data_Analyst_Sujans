@@ -48,4 +48,12 @@ SELECT
 FROM cov_ren_trf_system
 GROUP BY "GeoLocalArea"
 ORDER BY z_score DESC;
+```
+🧠 Insight:
+West End had a Z-score of 3.74 – suggesting it's significantly above the mean.
 
+Indicates either:
+
+A true density anomaly
+
+Or a possible outlier inflating the average
