@@ -102,7 +102,7 @@ Built a visual **ETL pipeline in AWS Glue** for validation using the following s
 ![Quality Check Pipeline](./Screen-Shots/quality_check_pipeline.png)
 
 ⬇️ **Screenshot**: Quality Check Result  
-![Validation Result](./Screen-Shot/quality_check_result.png)
+![Validation Result](./Screen-Shots/quality_check_result.png)
 
 ⬇️ **Screenshot**: Passed and Failed Folders  
 ![Passed Folder](./Screen-Shots/passed_folder.png)  
