@@ -122,9 +122,9 @@ ORDER BY z_score DESC;
 
 | Area        | Z-Score | Possible Cause                      |
 |-------------|---------|--------------------------------------|
-| West End    | 3.74    | Density skew or data outlier         |
-| Strathcona  | High    | Systemic issue or duplicate          |
-| Downtown    | High    | Repeated reports or high severity    |
+| West End (Total Units)   | 3.74    | Density skew or data outlier         |
+| Strathcona (Total Outstanding) | High    | Systemic issue or duplicate          |
+| Downtown (Total Outstanding)  | High    | Repeated reports or high severity    |
 
 ---
 
