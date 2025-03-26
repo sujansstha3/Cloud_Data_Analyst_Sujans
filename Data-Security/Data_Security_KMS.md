@@ -68,7 +68,7 @@ Once the key (`cov-ren-iss-key-suj`) was created, encryption was applied to all 
 2. **Transformed Bucket**
 
 ⬇️ Transformed Bucket Encryption  
-![Transformed Encryption](./Screen-Shots/transformed_encryption.png)
+![Transformed Encryption](./Screen-Shots/transformed_versioning.png)
 
 
 3. **Curated Bucket**
