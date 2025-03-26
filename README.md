@@ -34,22 +34,17 @@ The portfolio includes six major types of data analytics and operations:
 ```bash
 ├── Data-Quality-Control/
 │   ├── Data-Quality-Check.md
-│   └── Screen-Shots/
 
 ├── Data-Security/
 │   ├── Data_Security_KMS.md
-│   └── Screen-Shots/
 
 ├── Data-Wrangling/
 │   ├── Data_Wrangling_Report.md
-│   └── Screen-Shots/
 
 ├── Descriptive-Analysis/
 │   └── Descriptive_Insights.md
 
 ├── Design-Data-Analytics-Platform/
-│   ├── Design.png
-│   ├── Project 2 Design - Sujans Shrestha (2319052) Rental Issue.drawio
 │   └── dap_architecture.drawio
 
 ├── Diagnostic-Analysis/
