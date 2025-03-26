@@ -60,6 +60,10 @@ To validate this, we used **Z-Score statistical techniques in Athena** to identi
 
 ### 🔍 Total Units Z-Score Query
 
+### 🧾 SQL Query Execution Screenshot
+
+![Athena Z-Score Query](./Query1.png)
+
 ```sql
 SELECT 
   "GeoLocalArea",
@@ -71,6 +75,10 @@ FROM cov_ren_trf_system
 GROUP BY "GeoLocalArea"
 ORDER BY z_score DESC;
 ```
+### 🧾 SQL Query Execution Result Screenshot
+
+![Athena Z-Score Query](./Result1.png)
+
 ### ✅ Insight
 
 - **West End** had a **Z-score of 3.74**, indicating a potential outlier.
@@ -81,6 +89,10 @@ ORDER BY z_score DESC;
 ---
 
 ### 🔍 Total Outstanding Issues Z-Score Query
+
+### 🧾 SQL Query Execution Screenshot
+
+![Athena Z-Score Query](./Query2.png)
 
 ```sql
 SELECT    
@@ -93,6 +105,10 @@ FROM cov_ren_trf_system
 GROUP BY "GeoLocalArea" 
 ORDER BY z_score DESC;
 ```
+### 🧾 SQL Query Execution Result Screenshot
+
+![Athena Z-Score Query](./Result2.png)
+
 ### ✅ Insight
 
 - **Downtown** and **Strathcona** showed **very high Z-scores** for Total Outstanding.
