@@ -66,7 +66,7 @@ Using **AWS Glue DataBrew**, a data profile was generated for initial insights:
 - Missing/null values  
 - Correlation and outlier detection via boxplots
 
-⬇️ **Upload Screenshot**: Data Profiling Overview  
+⬇️ Data Profiling Overview  
 ![Data Profiling](./Screen-Shots/Data Profiling Overview.png)
 
 **Key Insight:**
@@ -87,7 +87,7 @@ A **DataBrew recipe** was created with steps for:
 - Removing rows with null values in `GeoLocalArea`  
 - Trimming extra spaces and unifying text cases
 
-⬇️ **Upload Screenshot**: Recipe Steps  
+⬇️ Recipe Steps  
 ![Data Cleaning Recipe](./Screen-Shots/Recipe Steps.png)
 
 **Why CamelCase?**  
@@ -99,7 +99,7 @@ Industry best practice. Improves compatibility with Athena, ETL pipelines, and d
 
 `GeoLocalArea` was selected for cleaning due to its analytical importance in segmentation and group-by operations.
 
-⬇️ **Upload Screenshot**: Null Value Filter Step  
+⬇️ Null Value Filter Step  
 ![Null Filter](./Screen-Shots/Null Value Filter Step .png)
 
 ---
@@ -108,7 +108,7 @@ Industry best practice. Improves compatibility with Athena, ETL pipelines, and d
 
 A **DataBrew Job** was created and run to apply the cleaning recipe. Runtime statistics were captured to evaluate cost and performance.
 
-⬇️ **Upload Screenshot**: Job Run History  
+⬇️ Job Run History  
 ![Job Run History](./Screen-Shots/Job Run History  .png)
 
 ---
@@ -120,10 +120,10 @@ A **DataBrew Job** was created and run to apply the cleaning recipe. Runtime sta
 | **User Output** | CSV (Uncompressed) | `cov-trf-suj/User`    | For accessibility, downloads      |
 | **System Output** | Parquet (Snappy) | `cov-trf-suj/System`  | For analysis, compression-enabled |
 
-⬇️ **Upload Screenshot**: User Output (CSV)  
+⬇️ User Output (CSV)  
 ![CSV User Output](./Screen-Shots/User Output (CSV).png)
 
-⬇️ **Upload Screenshot**: System Output (Parquet)  
+⬇️ System Output (Parquet)  
 ![Parquet System Output](./Screen-Shots/System Output (Parquet).png)
 
 **Why Parquet + Snappy?**  
