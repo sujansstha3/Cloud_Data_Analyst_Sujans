@@ -133,5 +133,5 @@ To maintain **high availability** and **durability**, **replication rules** were
 
 ## 📌 Conclusion
 
-The data security infrastructure for the City of Vancouver’s analytics platform is built on industry-standard AWS best practices. By combining encryption, versioning, and replication — and managing access with IAM roles — this architecture ensures that rental data is **confidential**, **recoverable**, and **always available**.
+The data security infrastructure for the City of Vancouver’s analytics platform is built on industry-standard AWS best practices. By combining encryption, versioning, and replication — and managing access with IAM roles — this architecture ensures that rental data is **confidential**, **recoverable**, and **always available**. 
 
