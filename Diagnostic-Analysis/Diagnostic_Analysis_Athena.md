@@ -65,15 +65,24 @@ To validate this, we used **Z-Score statistical techniques in Athena** to identi
 ![Athena Z-Score Query](./Query1.png)
 
 ```sql
-SELECT 
-  "GeoLocalArea",
-  AVG("TotalUnits") as avg_total_units,
-  STDDEV_POP("TotalUnits") as stddev_total_units,
-  MAX("TotalUnits") as max_units,
-  ROUND((MAX("TotalUnits") - AVG("TotalUnits")) / STDDEV_POP("TotalUnits"), 2) as z_score
-FROM cov_ren_trf_system
-GROUP BY "GeoLocalArea"
-ORDER BY z_score DESC;
+WITH Aggregated AS (
+    SELECT 
+        geolocalarea, 
+        MAX("totalunits") AS Max_Total_Units
+    FROM "cov_ren_trf_system" 
+    GROUP BY geolocalarea
+), Stats AS (
+    SELECT 
+        AVG(Max_Total_Units) AS Avg_Units_Overall,
+        STDDEV(Max_Total_Units) AS StdDev_Units_Overall
+    FROM Aggregated
+)
+SELECT A.geolocalarea, 
+       A.Max_Total_Units,
+       (A.Max_Total_Units - S.Avg_Units_Overall) / NULLIF(S.StdDev_Units_Overall, 0) AS Z_Score
+FROM Aggregated A, Stats S
+ORDER BY Z_Score DESC
+LIMIT 3;
 ```
 ### 🧾 SQL Query Execution Result Screenshot
 
@@ -95,15 +104,24 @@ ORDER BY z_score DESC;
 ![Athena Z-Score Query](./Query2.png)
 
 ```sql
-SELECT    
-  "GeoLocalArea",   
-  AVG("TotalOutstanding") as avg_total_outstanding,   
-  STDDEV_POP("TotalOutstanding") as stddev_outstanding,   
-  MAX("TotalOutstanding") as max_outstanding,   
-  ROUND((MAX("TotalOutstanding") - AVG("TotalOutstanding")) / STDDEV_POP("TotalOutstanding"), 2) as z_score 
-FROM cov_ren_trf_system 
-GROUP BY "GeoLocalArea" 
-ORDER BY z_score DESC;
+WITH Aggregated AS (
+    SELECT 
+        geolocalarea, 
+        MAX("totaloutstanding") AS Max_Total_Outstanding
+    FROM "cov_ren_trf_system" 
+    GROUP BY geolocalarea
+), Stats AS (
+    SELECT 
+        AVG(Max_Total_Outstanding) AS Avg_Outstanding_Overall,
+        STDDEV(Max_Total_Outstanding) AS StdDev_Outstanding_Overall
+    FROM Aggregated
+)
+SELECT A.geolocalarea, 
+       A.Max_Total_Outstanding,
+       (A.Max_Total_Outstanding - S.Avg_Outstanding_Overall) / NULLIF(S.StdDev_Outstanding_Overall, 0) AS Z_Score
+FROM Aggregated A, Stats S
+ORDER BY Z_Score DESC
+LIMIT 3;
 ```
 ### 🧾 SQL Query Execution Result Screenshot
 
